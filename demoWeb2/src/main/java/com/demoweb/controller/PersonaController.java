@@ -19,27 +19,27 @@ public class PersonaController {
   @Autowired
   IPersonaService personaService;
 
-  @GetMapping("/api/1.0/personas/")
+  @GetMapping("/myapi/1.0/personas")
   public List<Persona> getAllPersonas() {
     return personaService.getAll();
   }
 
-  @GetMapping("/api/1.0/personas/{idPersona}")
+  @GetMapping("/myapi/1.0/personas/{idPersona}")
   public Persona getOne(@PathVariable(value = "idPersona") int idPersona) {
     return personaService.get(idPersona);
   }
 
-  @PostMapping("/api/1.0/personas/")
+  @PostMapping("/myapi/1.0/personas")
   public void add(@RequestBody Persona persona) {
     personaService.post(persona);
   }
 
-  @PutMapping("/api/1.0/personas/{idPersona}")
+  @PutMapping("/myapi/1.0/personas/{idPersona}")
   public void update(@RequestBody Persona persona, @PathVariable int idPersona) {
     personaService.put(persona, idPersona);
   }
   
-  @DeleteMapping(value = "/api/1.0/personas/{idPersona}")
+  @DeleteMapping(value = "/myapi/1.0/personas/{idPersona}")
   public void eliminar(@PathVariable Integer idPersona) {
     personaService.delete(idPersona);
   }

@@ -1,4 +1,4 @@
-package com.demoweb.swaggerconfig;
+package com.demoweb.config;
 
 import static springfox.documentation.builders.PathSelectors.regex;
 
@@ -25,7 +25,7 @@ public class SwaggerConfig {
   public Docket productApi() {
     return new Docket(DocumentationType.SWAGGER_2).select()
         .apis(RequestHandlerSelectors.basePackage("com.demoweb"))
-        .paths(regex("/api/1.0.*")).build().apiInfo(metaInfo());
+        .paths(regex("/myapi/1.0.*")).build().apiInfo(metaInfo());
   }
 
   private ApiInfo metaInfo() {

@@ -19,27 +19,27 @@ public class LocalController {
   @Autowired
   ILocalService localService;
 
-  @GetMapping("/api/1.0/locales/")
+  @GetMapping("/myapi/1.0/locales")
   public List<Local> getAllLocales() {
     return localService.getAll();
   }
 
-  @GetMapping("/api/1.0/locales/{idLocal}")
+  @GetMapping("/myapi/1.0/locales/{idLocal}")
   public Local getOne(@PathVariable(value = "idLocal") int idLocal) {
     return localService.get(idLocal);
   }
 
-  @PostMapping("/api/1.0/locales/")
+  @PostMapping("/myapi/1.0/locales")
   public void add(@RequestBody Local local) {
     localService.post(local);
   }
 
-  @PutMapping("/api/1.0/locales/{idLocal}")
+  @PutMapping("/myapi/1.0/locales/{idLocal}")
   public void update(@RequestBody Local local, @PathVariable int idLocal) {
     localService.put(local, idLocal);
   }
   
-  @DeleteMapping(value = "/api/1.0/locales/{idLocal}")
+  @DeleteMapping(value = "/myapi/1.0/locales/{idLocal}")
   public void eliminar(@PathVariable Integer idLocal) {
     localService.delete(idLocal);
   }

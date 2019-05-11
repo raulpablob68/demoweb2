@@ -19,27 +19,27 @@ public class UsuarioController {
   @Autowired
   IUsuarioService usuarioService;
 
-  @GetMapping("/api/1.0/usuarios/")
+  @GetMapping("/myapi/1.0/usuarios")
   public List<Usuario> getAllPersonas() {
     return usuarioService.getAll();
   }
 
-  @GetMapping("/api/1.0/usuarios/{nombre}")
+  @GetMapping("/myapi/1.0/usuarios/{nombre}")
   public Usuario getOne(@PathVariable(value = "nombre") String nombre) {
     return usuarioService.get(nombre);
   }
 
-  @PostMapping("/api/1.0/usuarios/")
+  @PostMapping("/myapi/1.0/usuarios")
   public void add(@RequestBody Usuario usuario) {
     usuarioService.post(usuario);
   }
 
-  @PutMapping("/api/1.0/usuarios/{idUsuario}")
+  @PutMapping("/myapi/1.0/usuarios/{idUsuario}")
   public void update(@RequestBody Usuario usuario, @PathVariable int idUsuario) {
     usuarioService.put(usuario, idUsuario);
   }
   
-  @DeleteMapping(value = "/api/1.0/usuarios/{idUsuario}")
+  @DeleteMapping(value = "/myapi/1.0/usuarios/{idUsuario}")
   public void eliminar(@PathVariable Integer idUsuario) {
     usuarioService.delete(idUsuario);
   }
